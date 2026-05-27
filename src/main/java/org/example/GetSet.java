@@ -21,21 +21,21 @@ public class GetSet {
 
 //    Setters
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
+        if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Name cannot be null or empty");
         }
         this.name = name;
     }
 
     public void setAge(int age) {
-        if (age >= 0 && age <= 120) {
+        if (age < 0 || age > 120) {
             throw new IllegalArgumentException("Age must be between 0 and 120.");
         }
         this.age = age;
     }
 
     public void setCourse(String course) {
-        if (name == null || name.trim().isEmpty()) {
+        if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Course cannot be null or empty");
         }
         this.course = course;
